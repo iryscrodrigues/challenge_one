@@ -40,7 +40,7 @@ main .txt_in {
   font-weight: 400;
   font-size: 32px;
   line-height: 150%;
-  color: #fb88b4;
+  color: #074785;
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding-bottom: 660px;
@@ -99,30 +99,44 @@ main .txt_in {
   margin: 0px;
   width: 328px;
   height: 40px;
-  background: #fb88b4;
-  border: 1px solid #ff8aef;
+  background: #ffa4ac;
+  border: 1px solid #ffffff;
   border-radius: 24px;
   color: #ffffff;
   cursor: pointer;
+
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+
+  transition: all 1s ease-out;
 }
 
 .btncrip:hover {
-  background: #b7c9f2;
+  background: #f1854f;
 }
 
 .btndescrip {
   margin: 0px;
   width: 328px;
   height: 40px;
-  background: #ffffff;
+  background: #29aefd;
   border: 1px solid #ffffff;
   border-radius: 24px;
-  color: #b7c9f2;
+  color: #ffffff;
   cursor: pointer;
+
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+
+  transition: all 1s ease-out;
 }
 
 .btndescrip:hover {
-  background: #f9f07a;
+  background: #f9d555;
   color: #ffffff;
 }
 
@@ -147,20 +161,25 @@ aside img {
   left: 1110px;
   top: 665px;
 
+  background-color: #6420aa;
   border: 1px solid #ffffff;
   border-radius: 24px;
-  color: #ff3ea5;
-  font-family: "Playfair Display", serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
+  color: #ffffff;
+
   line-height: 1px;
   text-align: center;
   cursor: pointer;
+
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+
+  transition: all 1s ease-out;
 }
 
 .btncop:hover {
-  background: #86f2e0;
+  background: #7befe5;
   color: #ffffff;
 }
 
@@ -196,7 +215,7 @@ img {
   font-size: 24px;
   line-height: 120%;
   text-align: center;
-  color: #4d96ff;
+  color: #29aefd;
 
   flex: none;
   order: 0;
@@ -213,11 +232,10 @@ img {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-
   text-align: center;
 
   background-color: #ffffff;
-  color: #6420aa;
+  color: #074785;
   flex: none;
   order: 1;
   align-self: stretch;
@@ -231,8 +249,18 @@ footer {
   bottom: 0;
   width: 50%;
   height: 30px;
-  left: 41%;
+  left: 44.75%;
   font-family: "Playfair Display", serif;
   font-weight: bold;
+  font-size: 15px;
   color: #6420aa;
+}
+
+a {
+  font-style: italic;
+  transition: all 0.5s ease-out;
+}
+a:hover {
+  cursor: pointer;
+  color: #ffa4ac;
 }

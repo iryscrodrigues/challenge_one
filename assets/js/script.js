@@ -1,26 +1,21 @@
-var campoTexto = document.querySelector("#txtin");
-var campoTexto1 = document.getElementById("tt1");
-var campoTexto2 = document.getElementById("tt2");
 var textin = document.querySelector("#txtin");
 var cbtn = document.querySelector("#cbutton");
 var descbtn = document.querySelector("#descbutton");
 var copbtn = document.querySelector("#copbutton");
 
 function limparCampoTexto() {
-  var campoTexto = document.querySelector("#txtin");
-  campoTexto.value = "";
+  textin.value = "";
 }
 
 function criptografar() {
   var entrada = textin.value.toLowerCase();
   var saida = entrada.replace(/e/gim, "enter");
-  var saida = saida.replace(/o/gim, "ober");
-  var saida = saida.replace(/i/gim, "imes");
-  var saida = saida.replace(/a/gim, "ai");
-  var saida = saida.replace(/u/gim, "ufat");
+  saida = saida.replace(/o/gim, "ober");
+  saida = saida.replace(/i/gim, "imes");
+  saida = saida.replace(/a/gim, "ai");
+  saida = saida.replace(/u/gim, "ufat");
   document.getElementById("imgaside").style.display = "block";
-  var campoTexto1 = document.getElementById("tt1");
-  campoTexto1.textContent = "Sua mensagem foi criptografada";
+  document.getElementById("tt1").textContent = "Sua mensagem foi criptografada";
   document.getElementById("tt2").innerHTML = saida;
   document.getElementById("copbutton").style.display = "block";
 }
@@ -28,18 +23,17 @@ function criptografar() {
 function descriptografar() {
   var entrada = textin.value.toLowerCase();
   var saida = entrada.replace(/enter/gim, "e");
-  var saida = saida.replace(/ober/gim, "o");
-  var saida = saida.replace(/imes/gim, "i");
-  var saida = saida.replace(/ai/gim, "a");
-  var saida = saida.replace(/ufat/gim, "u");
+  saida = saida.replace(/ober/gim, "o");
+  saida = saida.replace(/imes/gim, "i");
+  saida = saida.replace(/ai/gim, "a");
+  saida = saida.replace(/ufat/gim, "u");
   document.getElementById("tt2").innerHTML = saida;
-  var campoTexto1 = document.getElementById("tt1");
-  campoTexto1.textContent = "Sua mensagem foi descriptografada";
+  document.getElementById("tt1").textContent =
+    "Sua mensagem foi descriptografada";
 }
 
 window.onload = function () {
-  var campoTexto2 = document.getElementById("tt2");
-  campoTexto2.readOnly = true;
+  document.getElementById("tt2").readOnly = true;
 };
 
 function copiar() {
@@ -49,6 +43,32 @@ function copiar() {
   alert("Copiado!");
 }
 
-cbtn.onclick = criptografar;
-descbtn.onclick = descriptografar;
+function noCharacters() {
+  var regex = new RegExp("[/^a-z0-9s/]+$");
+  var text = textin.value;
+
+  if (!regex.test(text)) {
+    alert(
+      "Atenção! Não é permitido caracteres especiais ou letras maiúsculas."
+    );
+    document.getElementById("tt2").textContent =
+      "Por gentileza, digite seu texto novamente sem caracteres especiais ou letras maiúsculas.";
+    return false;
+  } else {
+    return true;
+  }
+}
+
+cbtn.onclick = function () {
+  if (noCharacters()) {
+    criptografar();
+  }
+};
+
+descbtn.onclick = function () {
+  if (noCharacters()) {
+    descriptografar();
+  }
+};
+
 copbtn.onclick = copiar;
